@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   root to: 'users#index'
   
   get '/signup', to: 'users#new'
-  resources :users
+  post '/signup', to: 'users#create'
+  delete '/signup', to: 'users#destroy'
+  resources :users, only: [:index, :show, :edit, :update]
 end
