@@ -7,7 +7,7 @@ class Book < ApplicationRecord
 	# published_date : datetime
 	# description : text
 
-	# TODO: https://www.googleapis.com/books/v1/volumes?q=title:.....&author:.....
+	# TO DO :https://www.googleapis.com/books/v1/volumes?q=title:...&author:.....
 	def self.create_from_book_title(book_title)
 
 		# require 'uri'
