@@ -9,9 +9,10 @@ class HighlightsController < ApplicationController
   end
 
   def create
-   @highlights_text = params['highlights_text']
-   puts @highlights_text.delete(' ').split('|')
-   puts "aaaa"
+    @highlights_text = params['highlights_text']
+
+    Highlight.create_from_highlights_text(@highlights_text)
+
   end
 
   def edit
