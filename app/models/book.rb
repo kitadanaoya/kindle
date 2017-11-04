@@ -1,4 +1,5 @@
 class Book < ApplicationRecord
+	has_many :highlights
 
 	# book_id : int
 	# title : string
