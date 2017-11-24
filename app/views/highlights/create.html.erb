@@ -1,0 +1,13 @@
+<h4>以下のハイライトが更新されました。</h4>
+
+<% split_list = @highlights_text.delete(' ').split(' ') %>
+<%= 'title: ' + split_list[1] %><br>
+<%= 'author: ' + split_list[2] %><br>
+<% split_list.each.with_index do |txt, idx| %>
+	<% if txt.include?('色のハイライト') then %>
+	  <% highlight_flag = true %>
+	  ハイライト:
+	  <%= split_list[idx+1] %><br>
+	  <% next %>
+	<% end %>
+<% end %>

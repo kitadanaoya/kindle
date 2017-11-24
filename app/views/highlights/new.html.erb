@@ -1,2 +1,4 @@
-<h1>Highlights#new</h1>
-<p>Find me in app/views/highlights/new.html.erb</p>
+<%= form_tag({controller: :highlights, action: :create}, {method: :post}) do %>
+  <div><%= text_area_tag :highlights_text, 'ハイライト', :size=>"100x50" %></div>
+  <%= submit_tag "作成" %>
+<% end %>
