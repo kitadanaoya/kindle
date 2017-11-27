@@ -7,4 +7,9 @@ class User < ApplicationRecord
   has_secure_password
   
   mount_uploader :image, ImageUploader
+  
+  has_many :highlights, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  # likeしたhighlightを複数持つ
+  has_many :liked_highlights, through: :likes, source: :highlight
 end

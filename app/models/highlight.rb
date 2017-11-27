@@ -1,5 +1,9 @@
 class Highlight < ApplicationRecord
 	belongs_to :book
+	belongs_to :user
+	has_many :likes
+	#自分にlikeしたユーザを複数持つ
+	has_many :liked_users, through: :likes, source: :user
 
 	validates :content, uniqueness: true 
 
