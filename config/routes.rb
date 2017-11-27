@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   
 	get '/highlights', to: 'highlights#new'
   post '/highlights', to: 'highlights#create'
-  resources :highlights, only: [:index, :show]
+  resources :highlights, only: [:index, :show] do
+    resources :likes, only: [:create, :destroy]
+  end
 
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
@@ -14,6 +16,6 @@ Rails.application.routes.draw do
   end
 
   get 'login', to: 'sessions#new'
-  post 'login', to: 'session#create'
+  post 'login', to: 'sessions#create'
   delete 'logout', to: 'session#destroy'
 end

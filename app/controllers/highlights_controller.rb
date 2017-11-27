@@ -3,6 +3,8 @@ class HighlightsController < ApplicationController
   end
 
   def show
+    @highlight = Highlight.find(params[:id])
+    @like = Like.new()
   end
 
   def new

@@ -12,4 +12,9 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   # likeしたhighlightを複数持つ
   has_many :liked_highlights, through: :likes, source: :highlight
+  
+  
+  def already_liked?(highlight)
+    self.likes.exists?(highlight_id: highlight.id)
+  end
 end
