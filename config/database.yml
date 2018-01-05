@@ -31,10 +31,11 @@ test:
   database: db/test.sqlite3
 
 production:
-  adapter: postgresql
-  encoding: unicode
+  adapter: mysql2
+  enoding: unicode
   database: kindle_app
-  pool: 5
   username: root
   password:
-  host: 
+  socket: /var/run/mysqld/mysqld.sock
+  pool: 5
+  timeout: 5000
