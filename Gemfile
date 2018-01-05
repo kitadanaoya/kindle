@@ -61,3 +61,7 @@ gem 'bcrypt',         '3.1.11'
 
 gem 'carrierwave'
 gem 'rmagick'
+
+group :production do
+  gem 'pg'
+end
