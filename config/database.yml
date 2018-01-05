@@ -33,7 +33,8 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  pool: 5
   database: kindle_app
-  username: kindle
-  password: <%= ENV['KINDLE_DATABASE_PASSWORD'] %>
+  pool: 5
+  username: root
+  password:
+  host: 
