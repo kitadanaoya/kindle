@@ -35,5 +35,5 @@ production:
   encoding: unicode
   pool: 5
   database: kindle_app
-  username: root
-  password: 
+  username: kindle_app
+  password: <%= ENV['KINDLE_APP_DATABASE_PASSWORD'] %>
